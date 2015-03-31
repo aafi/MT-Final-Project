@@ -52,8 +52,8 @@ test_features = [s.strip().split() for s in open("data/test/test_features")]
 total_feature_scores = {}
 for i, feats in enumerate(test_features):
     total = 0
-    for feat in feats:
-        total += float(feat)
+    for w, feat in enumerate(feats):
+        total += float(feat) * weights[w]
     total_feature_scores[i] = total
 
 test_scores = {}
