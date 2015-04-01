@@ -8,7 +8,7 @@ Some interesting uses of sentence-level quality estimation are the following:
 3. Filter out sentences that are not good enough for post-editing by professional translators
 4. Select the best translation among options from multiple MT and/or translation memory systems
 
-**Your mission, should you choose to accept it, is to accurately score a sentence.** The scores are $1, 2$ or $3$.
+In this assignment we will give you Spanish source sentences and their English translations, which can either be human translations or two versions of machine translations. **Your mission, should you choose to accept it, is to accurately score a sentence.** The scores are $1, 2$ or $3$.
 
 + 1 means a perfect translation, no post-editing needed at all
 + 2 means a near miss translation: translation contains maximum of two-three errors, and possibly additional errors that can be easily fixed (capitalization, punctuation)
