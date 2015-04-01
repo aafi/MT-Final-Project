@@ -8,7 +8,7 @@ Some interesting uses of sentence-level quality estimation are the following:
 3. Filter out sentences that are not good enough for post-editing by professional translators
 4. Select the best translation among options from multiple MT and/or translation memory systems
 
-In this assignment we will give you Spanish source sentences and their English translations, which can either be human translations or two versions of machine translations. **Your mission, should you choose to accept it, is to accurately score a sentence.** The scores are $1, 2$ or $3$.
+In this assignment we will give you Spanish source sentences and their English translations, which can either be human translations or two versions of machine translations. **Your mission, should you choose to accept it, is to accurately score a sentence.** The scores are $$1, 2$$ or $$3$$.
 
 + 1 means a perfect translation, no post-editing needed at all
 + 2 means a near miss translation: translation contains maximum of two-three errors, and possibly additional errors that can be easily fixed (capitalization, punctuation)
@@ -23,7 +23,7 @@ In the downloaded directory, you have a program that evaluates how good a machin
 ```
 ./default.py > output
 ```
-Every translation $e$ of an input sentence $f$ has an associated feature vector $h(e, f)$. The `default` takes a parameter vector $\theta$ whose length is equal to that of $h(e, f)$. By default, $\theta = [1, 1, \ldots]$. For each sentence in the training data, we obtain a weighted sum of the features. Then, for each score we compute the average sum. Then, for each sentence in the test set, we compute a sum of the features and compare it with the average sum. We assign a score based on the minimum difference to the average of each score.
+Every translation $$e$$ of an input sentence $$f$$ has an associated feature vector $$h(e, f)$$. The `default` takes a parameter vector $$\theta$$ whose length is equal to that of $$h(e, f)$$. By default, $$\theta = [1, 1, \ldots]$$. For each sentence in the training data, we obtain a weighted sum of the features. Then, for each score we compute the average sum. Then, for each sentence in the test set, we compute a sum of the features and compare it with the average sum. We assign a score based on the minimum difference to the average of each score.
 
 <br />
 To evaluate, use this command:
@@ -34,7 +34,7 @@ To evaluate, use this command:
 The scoring is the accuracy measured against human annotated labels.
 
 ##The Challenge
-You can improve the parameter vector by using effective learning algorithms that optimize $\theta$. You can also improve the values assigned to the scores by using a function other than the naive average.
+You can improve the parameter vector by using effective learning algorithms that optimize $$\theta$$. You can also improve the values assigned to the scores by using a function other than the naive average.
 
 Implement a version of a learning algorithm and some feature engineering to improve accuracy.  Here are some ideas to improve the accuracy:
 
