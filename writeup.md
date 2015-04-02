@@ -33,6 +33,13 @@ To evaluate, use this command:
 ```
 The scoring is the accuracy measured against human annotated labels.
 
+##Baseline Method
+For the baseline implementation we are planning to try out a few different methods to see which is feasible. They include:
+
+1. K Nearest Neighbors
+2. Clustering
+3. An algorithm for learning new weights 
+
 ##The Challenge
 You can improve the parameter vector by using effective learning algorithms that optimize $$\theta$$. You can also improve the values assigned to the scores by using a function other than the naive average.
 
