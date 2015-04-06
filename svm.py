@@ -4,7 +4,8 @@ import sys
 from collections import defaultdict, Counter
 import operator
 from sklearn import svm
-clf = svm.SVC(gamma=0.001, C=100.)
+import numpy as np
+from sklearn import cross_validation
 
 optparser = optparse.OptionParser()
 optparser.add_option("-c", "--score", dest="score_train", default="data/train/es-en_score.train", help="Score train set")
