@@ -3,7 +3,8 @@ import optparse
 import sys
 from collections import defaultdict, Counter
 import operator
-from sklearn import tree
+from sklearn import svm
+clf = svm.SVC(gamma=0.001, C=100.)
 
 optparser = optparse.OptionParser()
 optparser.add_option("-c", "--score", dest="score_train", default="data/train/es-en_score.train", help="Score train set")
@@ -30,11 +31,12 @@ def get_label(feats, clf):
     label = clf.predict(feats)
     return label[0]
 
-# Build Decision Tree
+# Build SVM Classifier
 X = features
 Y = score
-clf = tree.DecisionTreeClassifier()
-clf = clf.fit(X, Y)
+clf = svm.SVC(gamma=0.001, C=100.)
+
+clf = clf.fit(X, Y)  
 
 # Predict Scores
 test_features = [s.strip().split() for s in open("data/test/test_features")]
