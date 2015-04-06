@@ -20,7 +20,6 @@ weights = {}
 for i, f in enumerate(features):
     weights[i] = 1
 
-
 def get_avg_score(score_list):
     feature_score = {}
     for i, index in enumerate(score_list):
