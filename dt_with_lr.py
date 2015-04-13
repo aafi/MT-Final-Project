@@ -1,0 +1,87 @@
+#!/usr/bin/env python
+import optparse
+import sys
+from collections import defaultdict, Counter
+import operator
+from sklearn import tree
+from sklearn import linear_model
+
+optparser = optparse.OptionParser()
+optparser.add_option("-c", "--score", dest="score_train", default="data/train/es-en_score.train", help="Score train set")
+optparser.add_option("-s", "--source", dest="source_train", default="data/train/es-en_source.train", help="Scourse train set")
+optparser.add_option("-t", "--target", dest="target_train", default="data/train/es-en_target.train", help="Target train set")
+optparser.add_option("-f", "--features", dest="feature_train", default="data/train/train_features", help="Feature train set")
+
+# k = 11 for best result!
+optparser.add_option("-k", "--k", dest="k", type="int", default=11, help="k nearest neighbors")
+(opts, _) = optparser.parse_args()
+
+score = [float(s.strip()) for s in open(opts.score_train).readlines()]
+source = [s.strip() for s in open(opts.source_train).readlines()]
+target = [s.strip().split() for s in open(opts.target_train).readlines()]
+features = [s.strip().split() for s in open(opts.feature_train).readlines()]
+
+# Set the weights
+weights = {}
+for i, f in enumerate(features):
+    weights[i] = 1
+
+def get_label(feats, clf):
+    label = clf.predict(feats)
+    return label[0]
+
+def feat_val(feature_list):
+    weighted_features = []
+    for w, f in enumerate(feature_list):
+        weighted_val = float(f) * weights[w]
+        weighted_features.extend([weighted_val])
+    return weighted_features
+
+f = []
+for feat_list in features:
+    feats = []
+    for feat in feat_list:
+        feats.append(float(feat))
+    f.append(feats)
+# print f
+X_train = f
+Y_train = score
+ols = linear_model.LinearRegression()
+ols.fit(X_train, Y_train)
+
+for i, w in enumerate(ols.coef_):
+    weights[i] = w
+#sys.stdout.write("computing new feature values")
+# Build new feature list with weighted values
+weighted_features = list()
+for i, feat in enumerate(features):
+    weighted_features.append(feat_val(feat))
+
+#print("weighted features: ")
+#print(weighted_features)
+
+# Build Decision Tree
+X = weighted_features
+Y = score
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(X, Y)
+
+#sys.stdout.write("built decision tree")
+
+# Predict Scores
+test_features = [s.strip().split() for s in open("data/test/test_features")]
+
+weighted_test_features = list()
+for i, feat in enumerate(features):
+    weighted_test_features.append(feat_val(feat))
+
+test_scores = {}
+for i, feats in enumerate(weighted_test_features):
+    test_scores[i] = int(get_label(feats, clf))
+
+for score in test_scores.values():
+    sys.stdout.write("%s\n" % score)
+
+
+
+
