@@ -22,13 +22,20 @@ In addition to the above files, there are similar Python programs:
 They can be run in the same way as the first six.
 
 <br/>
-The `data/` directory contains two directories:
+The `data/` directory contains one directory:
 
-+ `train`
-+ `train_out_of_domain`
++ `train`, which contains
+	+ `es-en_score.train`, which contains the score assigned to each sentence (one score per line)
+	+ `es-en_source.train`, which contains 1050 Spanish sentences
+	+ `es-en_target.train`, which contains 1050 English translations
+	+ `train_features`, which contains the values of each of the 17 features for each sentence
 
-as well as the `feature-list`.
+as well as the `feature-list`, which contains the list of features being used
 
 The `test-data/` directory contains one directory:
 
-+ `test`
++ `test`, which contains
+	+ `es-en_score.test`, which 
+	+ `es-en_source.test`, which contains 450 Spanish sentences
+	+ `es-en_target.test`, which contains 450 English translations
+	+ `test_features`, which contains the values of each of the 17 features for each test sentence
