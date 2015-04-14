@@ -24,4 +24,14 @@ The next extension we implemented was Support Vector Machines (SVMs) with radial
 The third extension we implemented was Decision Trees, again using the Python library, `scikit`.  First fit a linear regression model to the data and used the coefficients returned as weights for each feature. Then, using this weighted values for each feature we trained a decision tree, picking the features that yielded the highest information gain. We used the decision tree to then score the test sentences.
 
 ### Results
-Default: 
+|                 Method                	| % Accuracy 	|
+|-------------------------------------	|:----------:	|
+| Default                               	|   23.1111  	|
+| Baseline KNN                          	|   44.0000  	|
+| Decision Trees                        	|   34.6667  	|
+| Decision Trees with Linear Regression 	|   46.8889  	|
+| Random Forests                        	|   45.5556  	|
+| Support Vector Machines               	|   38.4444  	|
+| Support Vector Regression             	|            	|
+| Naive Bayes Classifier                	|   41.1111  	|
+| Linear Regression with KNN            	|   45.5556  	|
