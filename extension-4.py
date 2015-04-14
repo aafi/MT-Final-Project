@@ -27,7 +27,7 @@ def get_label(feats, clf):
     return label[0]
 
 X_train = features
-X_test = [s.strip().split() for s in open("data/test/test_features")]
+X_test = [s.strip().split() for s in open("test-data/test_features")]
 y_train = score
 
 # Create classifier

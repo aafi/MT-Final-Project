@@ -68,7 +68,7 @@ train_dict = list()
 for i, feat in enumerate(features):
     train_dict.append((feat_sum(feat), score[i]))
 
-test_features = [s.strip().split() for s in open("data/test/test_features")]
+test_features = [s.strip().split() for s in open("test-data/test_features")]
 
 test_scores = {}
 for i, feats in enumerate(test_features):

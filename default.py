@@ -47,7 +47,7 @@ ones_avg_score = get_avg_score(ones)
 twos_avg_score = get_avg_score(twos)
 threes_avg_score = get_avg_score(threes)
 
-test_features = [s.strip().split() for s in open("data/test/test_features")]
+test_features = [s.strip().split() for s in open("test-data/test_features")]
 total_feature_scores = {}
 for i, feats in enumerate(test_features):
     total = 0

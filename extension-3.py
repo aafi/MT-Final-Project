@@ -43,7 +43,7 @@ clf = grid_search.GridSearchCV(svr,parameters,cv=10)
 clf = clf.fit(X, Y)  
 
 # Predict Scores
-test_features = [s.strip().split() for s in open("data/test/test_features")]
+test_features = [s.strip().split() for s in open("test-data/test_features")]
 
 test_scores = {}
 for i, feats in enumerate(test_features):
