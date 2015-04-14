@@ -69,7 +69,7 @@ clf = clf.fit(X, Y)
 #sys.stdout.write("built decision tree")
 
 # Predict Scores
-test_features = [s.strip().split() for s in open("data/test/test_features")]
+test_features = [s.strip().split() for s in open("test-data/test_features")]
 
 weighted_test_features = list()
 for i, feat in enumerate(features):

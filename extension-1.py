@@ -11,7 +11,11 @@ optparser.add_option("-s", "--source", dest="source_train", default="data/train/
 optparser.add_option("-t", "--target", dest="target_train", default="data/train/es-en_target.train", help="Target train set")
 optparser.add_option("-f", "--features", dest="feature_train", default="data/train/train_features", help="Feature train set")
 
+<<<<<<< HEAD:linear-regression-knn.py
 # k = 9 for best result!
+=======
+# k = 11 for best result!
+>>>>>>> bfb1b930bc31ce01cd51d0c772aee95552ce3916:extension-1.py
 optparser.add_option("-k", "--k", dest="k", type="int", default=11, help="k nearest neighbors")
 (opts, _) = optparser.parse_args()
 
@@ -68,7 +72,7 @@ train_dict = list()
 for i, feat in enumerate(features):
     train_dict.append((feat_sum(feat), score[i]))
 
-test_features = [s.strip().split() for s in open("data/test/test_features")]
+test_features = [s.strip().split() for s in open("test-data/test_features")]
 
 test_scores = {}
 for i, feats in enumerate(test_features):

@@ -125,7 +125,7 @@ class Score(object):
 
 scorer = Score(1e-5)
 test_scores = {}
-f = open("data/test/es-en_target.test")
+f = open("test-data/es-en_target.test")
 for i, line in enumerate(f.readlines()):
     test_scores[i] = scorer.get_score(line)
 
