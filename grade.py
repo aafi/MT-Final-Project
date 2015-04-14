@@ -22,7 +22,7 @@ acc = right / (right + wrong)
 
 sys.stderr.write("\t  Pred. y=1\ty=2\ty=3\n")
 for (true_y, c) in enumerate(conf):
-  sys.stderr.write("True y=%2d\t" % (true_y - 1))
+  sys.stderr.write("True y=%2d\t" % (true_y + 1))
   sys.stderr.write("%d\t%d\t%d\n" % tuple(c))
 sys.stderr.write("\n")
 
