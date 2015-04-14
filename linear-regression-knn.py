@@ -12,7 +12,7 @@ optparser.add_option("-t", "--target", dest="target_train", default="data/train/
 optparser.add_option("-f", "--features", dest="feature_train", default="data/train/train_features", help="Feature train set")
 
 # k = 9 for best result!
-optparser.add_option("-k", "--k", dest="k", type="int", default=9, help="k nearest neighbors")
+optparser.add_option("-k", "--k", dest="k", type="int", default=11, help="k nearest neighbors")
 (opts, _) = optparser.parse_args()
 
 score = [float(s.strip()) for s in open(opts.score_train).readlines()]

@@ -37,7 +37,7 @@ X = features
 Y = score
 parameters = {'kernel':('linear','rbf'), 'C':[1,10],'gamma':[0.0,1.0]}
 svr = svm.SVC()
-clf = grid_search.GridSearchCV(svr,parameters,cv=10)
+clf = grid_search.GridSearchCV(svr,parameters,cv=3)
 # clf = svm.SVC(gamma=0.001, C=100.)
 
 clf = clf.fit(X, Y)  
