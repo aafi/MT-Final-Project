@@ -10,7 +10,7 @@ Aryeh Stiefel
 
 
 #### Extension One: Linear Regression with KNN
-We then began implementing various extensions. We got the ideas for them from the *Findings of the 2014 Workshop on Statistical Machine Translation* paper, by Bojar et. al. The first extension we implemented was Linear Regression, using the Python library, `scikit`. Using this method, on top of KNN, we were able to beat the baseline. Linear regression generated weights for the features and then recomputed KNN using the weighted values for each feature.
+We got the ideas for our extensions from the *Findings of the 2014 Workshop on Statistical Machine Translation* paper, by Bojar et. al. The first extension we implemented was Linear Regression, using the Python library, `scikit`. Using this method, on top of KNN, we were able to beat the baseline. Linear regression generated weights for the features and then recomputed KNN using the weighted values for each feature.
 
 We chose this extension because it built off of the baseline. It took the baseline and changed the weighted importance of the features, hence improving the accuracy.
 
