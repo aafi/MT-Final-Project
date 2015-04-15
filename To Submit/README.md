@@ -22,7 +22,7 @@ In addition to the above files, there are similar Python programs:
 They can be run in the same way as the first six.
 
 <br/>
-The `data/` directory contains one directory:
+The `data-train/` directory contains one directory:
 
 + `train`, which contains
 	+ `es-en_score.train`, which contains the score assigned to each sentence (one score per line)
