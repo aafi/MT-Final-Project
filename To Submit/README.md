@@ -30,9 +30,13 @@ The `data-train/` directory contains one directory:
 	+ `es-en_target.train`, which contains 1050 English translations
 	+ `train_features`, which contains the values of each of the 17 features for each sentence
 
-as well as the `feature-list`, which contains the list of features being used
+as well as the `feature-list`, which contains the list of features being used.
 
-The `test-data/` directory contains one directory:
+The `data-dev/` directory contains:
+
++ `es-en_score.dev`, which contains the score assigned to every alternate sentence in the test data, i:e 225 scores. This is what is used to develop locally.
+
+The `data-test/` directory contains one directory:
 
 + `test`, which contains
 	+ `es-en_score.test`, which contains the true scores for each sentence (do not include this file when uploading as an assignment)
