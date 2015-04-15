@@ -23,7 +23,7 @@ We improved on this by adding new features. The different features we tried were
 
 Adding features 1 and 2 didn't improve the accuracy by a lot. We then tried adding them instead as a ratio (feature 3 in the above list). This also, didn't significantly improve the results, suggesting that the content words weren't very indicative of the goodness of the translation. 
 
-The number of untranslated words, was an informative feature and improved the accuracy to 47.55%.
+The number of untranslated words, was an informative feature and improved the accuracy to 48%.
 
 #### Extension Two: Decision Trees
 In addition to linear regression, another way of finding the importance of the features is through decision trees. We chose to implement decision trees with the weighted feature values yielded by linear regression. It was implemented using the Python library, `scikit`.  
@@ -46,7 +46,7 @@ We used a random forest classifier optimizing the parameters `n_estimators`, `cr
 | Default                               	|   23.1111  	|
 | Baseline KNN                          	|   44.0000  	|
 | Linear Regression with KNN            	|   45.5556  	|
-| Linear Regression with KNN and New Features            	|   47.55  	|
+| Linear Regression with KNN and New Features            	|   48.00  	|
 | Decision Trees                        	|   34.6667  	|
 | Decision Trees with Linear Regression 	|   46.8889  	|
 | Random Forests                        	|   50.0000  	|
