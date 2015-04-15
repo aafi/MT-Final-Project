@@ -35,7 +35,7 @@ as well as the `feature-list`, which contains the list of features being used
 The `test-data/` directory contains one directory:
 
 + `test`, which contains
-	+ `es-en_score.test`, which 
+	+ `es-en_score.test`, which contains the true scores for each sentence (do not include this file when uploading as an assignment)
 	+ `es-en_source.test`, which contains 450 Spanish sentences
 	+ `es-en_target.test`, which contains 450 English translations
 	+ `test_features`, which contains the values of each of the 17 features for each test sentence
