@@ -4,7 +4,7 @@ import sys
 
 optparser = optparse.OptionParser()
 # optparser.add_option("-i", "--input", dest="input", default="data/hyp1-hyp2-ref", help="Input file (default data/train.hyp1-hyp2-ref)")
-optparser.add_option("-t", "--truth", dest="truth", default="data-test/es-en_score.test", help="Human judgements (default=data-test/es-en_score.test)")
+optparser.add_option("-t", "--truth", dest="truth", default="data-dev/es-en_score.dev", help="Human judgements (default=data-test/es-en_score.test)")
 (opts, args) = optparser.parse_args()
 
 (right, wrong) = (0.0,0.0)

@@ -9,10 +9,10 @@ from sklearn import cross_validation
 
 
 optparser = optparse.OptionParser()
-optparser.add_option("-c", "--score", dest="score_train", default="data/train/es-en_score.train", help="Score train set")
-optparser.add_option("-s", "--source", dest="source_train", default="data/train/es-en_source.train", help="Scourse train set")
-optparser.add_option("-t", "--target", dest="target_train", default="data/train/es-en_target.train", help="Target train set")
-optparser.add_option("-f", "--features", dest="feature_train", default="data/train/train_features", help="Feature train set")
+optparser.add_option("-c", "--score", dest="score_train", default="data-train/es-en_score.train", help="Score train set")
+optparser.add_option("-s", "--source", dest="source_train", default="data-train/es-en_source.train", help="Scourse train set")
+optparser.add_option("-t", "--target", dest="target_train", default="data-train/es-en_target.train", help="Target train set")
+optparser.add_option("-f", "--features", dest="feature_train", default="data-train/train_features", help="Feature train set")
 
 
 (opts, _) = optparser.parse_args()
@@ -27,7 +27,7 @@ def get_label(feats, clf):
     return label[0]
 
 X_train = features
-X_test = [s.strip().split() for s in open("test-data/test_features")]
+X_test = [s.strip().split() for s in open("data-test/test_features")]
 y_train = score
 
 # Create classifier
