@@ -6,10 +6,10 @@ import operator
 from sklearn import tree
 
 optparser = optparse.OptionParser()
-optparser.add_option("-c", "--score", dest="score_train", default="data/train/es-en_score.train", help="Score train set")
-optparser.add_option("-s", "--source", dest="source_train", default="data/train/es-en_source.train", help="Scourse train set")
-optparser.add_option("-t", "--target", dest="target_train", default="data/train/es-en_target.train", help="Target train set")
-optparser.add_option("-f", "--features", dest="feature_train", default="data/train/train_features", help="Feature train set")
+optparser.add_option("-c", "--score", dest="score_train", default="data-train/es-en_score.train", help="Score train set")
+optparser.add_option("-s", "--source", dest="source_train", default="data-train/es-en_source.train", help="Scourse train set")
+optparser.add_option("-t", "--target", dest="target_train", default="data-train/es-en_target.train", help="Target train set")
+optparser.add_option("-f", "--features", dest="feature_train", default="data-train/train_features", help="Feature train set")
 
 # k = 11 for best result!
 optparser.add_option("-k", "--k", dest="k", type="int", default=11, help="k nearest neighbors")
@@ -37,7 +37,7 @@ clf = tree.DecisionTreeClassifier()
 clf = clf.fit(X, Y)
 
 # Predict Scores
-test_features = [s.strip().split() for s in open("test-data/test_features")]
+test_features = [s.strip().split() for s in open("data-test/test_features")]
 
 test_scores = {}
 for i, feats in enumerate(test_features):

@@ -6,10 +6,10 @@ import math
 import re
 
 optparser = optparse.OptionParser()
-optparser.add_option("-c", "--score", dest="score_train", default="data/train/es-en_score.train", help="Score train set")
-optparser.add_option("-s", "--source", dest="source_train", default="data/train/es-en_source.train", help="Source train set")
-optparser.add_option("-t", "--target", dest="target_train", default="data/train/es-en_target.train", help="Target train set")
-optparser.add_option("-f", "--features", dest="feature_train", default="data/train/train_features", help="Feature train set")
+optparser.add_option("-c", "--score", dest="score_train", default="data-train/es-en_score.train", help="Score train set")
+optparser.add_option("-s", "--source", dest="source_train", default="data-train/es-en_source.train", help="Scourse train set")
+optparser.add_option("-t", "--target", dest="target_train", default="data-train/es-en_target.train", help="Target train set")
+optparser.add_option("-f", "--features", dest="feature_train", default="data-train/train_features", help="Feature train set")
 (opts, _) = optparser.parse_args()
 
 score = [s.strip() for s in open(opts.score_train).readlines()]
@@ -125,7 +125,7 @@ class Score(object):
 
 scorer = Score(1e-5)
 test_scores = {}
-f = open("test-data/es-en_target.test")
+f = open("data-test/es-en_target.test")
 for i, line in enumerate(f.readlines()):
     test_scores[i] = scorer.get_score(line)
 
